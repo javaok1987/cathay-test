@@ -36,7 +36,7 @@ module.exports = {
         recordsPath: 'node_modules/.cache/hard-source/[confighash]/records.json',
         // configHash在啟動webpack實例時轉換webpack配置，
         // 並用於cacheDirectory為不同的webpack配置構建不同的緩存
-        configHash: function (webpackConfig) {
+        configHash: function(webpackConfig) {
           // node-object-hash on npm can be used to build this.
           return require('node-object-hash')({ sort: false }).hash(webpackConfig);
         },
