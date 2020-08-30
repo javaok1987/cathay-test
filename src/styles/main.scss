@@ -1,0 +1,23 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './helpers/reset';
+@import './helpers/variables';
+@import './helpers/mixin';
+
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  display: block;
+  overflow-x: hidden;
+  font-family: $font-family;
+}
+
+a {
+  text-decoration: none;
+}

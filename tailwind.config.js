@@ -1,13 +1,5 @@
 module.exports = {
-  theme: {
-    extend: {},
-    fontSize: {},
-    lineHeight: {},
-    textColor: {},
-    backgroundColor: {},
-    borderColor: {},
-    maxHeight: {},
-  },
+  theme: {},
   variants: {},
   plugins: [],
 };

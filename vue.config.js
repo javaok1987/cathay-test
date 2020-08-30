@@ -11,9 +11,6 @@ const debugMode = process.env.NODE_ENV === 'development';
 
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
-  // devServer: {
-  //   proxy: 'http://manage-t.housefun.com.tw/', // 設置代理.
-  // },
   pages: {
     index: {
       entry: 'src/main.js',
@@ -27,7 +24,7 @@ module.exports = {
   publicPath: '/',
   outputDir: 'dist',
   lintOnSave: debugMode,
-  productionSourceMap: false,
+  productionSourceMap: debugMode,
   configureWebpack: {
     plugins: [
       // 緩存加速二次構建速度.
@@ -39,7 +36,7 @@ module.exports = {
         recordsPath: 'node_modules/.cache/hard-source/[confighash]/records.json',
         // configHash在啟動webpack實例時轉換webpack配置，
         // 並用於cacheDirectory為不同的webpack配置構建不同的緩存
-        configHash: function(webpackConfig) {
+        configHash: function (webpackConfig) {
           // node-object-hash on npm can be used to build this.
           return require('node-object-hash')({ sort: false }).hash(webpackConfig);
         },
@@ -76,6 +73,7 @@ module.exports = {
       ]),
     ],
     resolve: {
+      extensions: ['.js', '.vue', '.json'],
       alias: {
         '@': resolve('src'),
       },
